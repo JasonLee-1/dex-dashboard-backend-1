@@ -15,6 +15,7 @@ let ProjectSchema = new Schema({
     network: {type: String, required: false},
     description: {type: String, required: false},
     launchDate: {type: Number, required: false},
+    checkValue: {type: String},
     socialData: {type: Object, required: false},
     fork: {type:String, require: false},
     watchlist:{type:Boolean},
