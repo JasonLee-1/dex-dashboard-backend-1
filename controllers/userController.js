@@ -5,7 +5,6 @@ exports.loginUser = function (req, res) {
     console.log(data)
     User.find({email:data.email, password:data.password, role:data.role}).exec(function (err, user) {
         if (err)  return next(err);
-        console.log(user)
         res.send(user)
     })
 };
@@ -21,7 +20,6 @@ exports.signupUser = function (req, res) {
             user.save(function(err, result){
                 if(err) return next (err)
                 res.send('Sign up success!')
-                console.log(user)
             })
         }else if(userlist.length>0){
             res.send('Aleady existing user!')
@@ -33,18 +31,15 @@ exports.signupUser = function (req, res) {
 exports.getUser = function (req, res){
     User.find().exec(function (err, user) {
         if (err)  return next(err);
-        console.log(user)
         res.send(user)
     })
 }
 
 exports.deadUser = function (req, res){
-    console.log(req.body)
     User.findById(req.body.id).exec((err, result)=>{
         if (err)  return next(err);
         if(result.dead)result.dead=false
         else result.dead=true
-        console.log(result)
         User.updateOne({_id:req.body.id},result).exec((err1,result1)=>{
             if (err1)  return next(err1);
             res.send(result)

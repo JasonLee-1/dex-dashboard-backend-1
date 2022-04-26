@@ -86,6 +86,21 @@ exports.updateProjectRug = function (req, res){
    })
 }
 
+exports.updateProjectFunction = function (req, res){
+    console.log(req.body)
+   Project.updateOne({_id:req.body._id},req.body).exec((err, result)=>{
+       if (err)  return next(err);
+       res.send('Update success!')
+    //    if(result.ruged)result.ruged=false
+    //    else result.ruged=true
+    //    result.isNew=false
+    //    Project.updateOne({_id:req.body.id},result).exec((err1,result1)=>{
+    //        if (err1)  return next(err1);
+    //        res.send(result)
+    //    })
+   })
+}
+
 exports.editProject = function (req, res){
     let project = req.body
     project.isNew = false
