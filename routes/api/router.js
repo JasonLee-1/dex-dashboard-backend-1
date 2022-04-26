@@ -3,6 +3,7 @@ const express = require("express");
 
 const router = express.Router();
 const productController = require('../../controllers/projectController');
+const userController = require('../../controllers/userController');
 
 router.get('/',productController.getProject)
 
@@ -21,5 +22,14 @@ router.post('/updateAdminRug',productController.updateProjectRug);
 router.post('/removeProject',productController.removeProject);
 
 router.post('/forkedit',productController.editProject);
+
+
+router.post('/loginUser',userController.loginUser);
+
+router.post('/signupUser',userController.signupUser);
+
+router.get('/getUser',userController.getUser);
+
+router.post('/deadUser',userController.deadUser);
 
 module.exports = router;

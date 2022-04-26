@@ -102,13 +102,6 @@ exports.removeProject = function (req, res){
    Project.deleteOne({_id:req.body.id}).exec((err, result)=>{
        if(err) return next(err)
        res.send(req.body.id)
-    //    if (err)  return next(err);
-    //    if(result.ruged)result.ruged=false
-    //    else result.ruged=true
-    //    Project.updateOne({_id:req.body.id},result).exec((err1,result1)=>{
-    //        if (err1)  return next(err1);
-    //        res.send(result)
-    //    })
    })
 }
 
