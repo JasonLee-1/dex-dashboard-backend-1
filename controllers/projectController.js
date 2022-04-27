@@ -23,7 +23,7 @@ exports.getProject = function (req, res) {
 };
 
 exports.saveProject = function (req, res){
-    
+    console.log(req.body)
     let project = new Project(req.body)
     project.isNew=true
     project.created_at = new Date().getTime()
@@ -139,7 +139,7 @@ exports.updateAdminTop = function (req, res){
 }
 
 exports.updateProjectFunction = function (req, res){
-    console.log(req.body)
+    // console.log(req.body)
    Project.updateOne({_id:req.body._id},req.body).exec((err, result)=>{
        if (err)  return next(err);
        res.send('Update success!')
@@ -173,5 +173,5 @@ exports.removeProject = function (req, res){
 }
 
 exports.saveImage = function (req, res){
-    console.log(req)
+    // console.log(req)
 }
