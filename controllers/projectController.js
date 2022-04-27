@@ -86,6 +86,58 @@ exports.updateProjectRug = function (req, res){
    })
 }
 
+exports.updateAdminFeatured = function (req, res){
+   Project.findById(req.body.id).exec((err, result)=>{
+       if (err)  return next(err);
+       if(result.featured)result.featured=false
+       else result.featured=true
+       result.isNew=false
+       Project.updateOne({_id:req.body.id},result).exec((err1,result1)=>{
+           if (err1)  return next(err1);
+           res.send(result)
+       })
+   })
+}
+
+exports.updateAdminHot = function (req, res){
+   Project.findById(req.body.id).exec((err, result)=>{
+       if (err)  return next(err);
+       if(result.hot)result.hot=false
+       else result.hot=true
+       result.isNew=false
+       Project.updateOne({_id:req.body.id},result).exec((err1,result1)=>{
+           if (err1)  return next(err1);
+           res.send(result)
+       })
+   })
+}
+
+exports.updateAdminTrending = function (req, res){
+   Project.findById(req.body.id).exec((err, result)=>{
+       if (err)  return next(err);
+       if(result.trending)result.trending=false
+       else result.trending=true
+       result.isNew=false
+       Project.updateOne({_id:req.body.id},result).exec((err1,result1)=>{
+           if (err1)  return next(err1);
+           res.send(result)
+       })
+   })
+}
+
+exports.updateAdminTop = function (req, res){
+   Project.findById(req.body.id).exec((err, result)=>{
+       if (err)  return next(err);
+       if(result.top)result.top=false
+       else result.top=true
+       result.isNew=false
+       Project.updateOne({_id:req.body.id},result).exec((err1,result1)=>{
+           if (err1)  return next(err1);
+           res.send(result)
+       })
+   })
+}
+
 exports.updateProjectFunction = function (req, res){
     console.log(req.body)
    Project.updateOne({_id:req.body._id},req.body).exec((err, result)=>{

@@ -2,7 +2,7 @@
 const DATABASE_NAME = "forkdashboard";
 // const CONNECTION_URL = "mongodb://localhost:27017/"+DATABASE_NAME;
 const CONNECTION_URL = "mongodb+srv://forkauth:VqhPVVQ43qXAd0zq@fork.feop0.mongodb.net/forkdashboard";
-//mongodb+srv://cyd313:cyd313@cluster0.ygrj9.mongodb.net/gcdesign
+
 const mongoose = require('mongoose');
 const mongoDB = process.env.MONGODB_URI || CONNECTION_URL;
 mongoose.connect(mongoDB);

@@ -46,38 +46,3 @@ exports.deadUser = function (req, res){
         })
     })
 }
-
-// exports.updateProject = function (req, res){
-//     Project.findById(req.body.id).exec((err, result)=>{
-//         if (err)  return next(err);
-//         if(result.watchlist==true)result.watchlist=false
-//         else result.watchlist=true
-//         result.isNew=false
-//         Project.updateOne({_id:req.body.id},result).exec((err1,result1)=>{
-//             if (err1)  return next(err1);
-//             res.send(result)
-//         })
-//     })
-// }
-
-
-// exports.updateProjectApprove = function (req, res){
-//     Project.findById(req.body.id).exec((err, result)=>{
-//         if (err)  return next(err);
-//         if(result.approved)result.approved=false
-//         else result.approved=true
-//         result.isNew=false
-//         Project.updateOne({_id:req.body.id},result).exec((err1,result1)=>{
-//             if (err1)  return next(err1);
-//             res.send(result)
-//         })
-//     })
-// }
-
-// exports.removeProject = function (req, res){
-//    Project.deleteOne({_id:req.body.id}).exec((err, result)=>{
-//        if(err) return next(err)
-//        res.send(req.body.id)
-//    })
-// }
-
