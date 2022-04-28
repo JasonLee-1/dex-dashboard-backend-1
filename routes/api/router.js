@@ -21,6 +21,8 @@ router.post('/updateAdminDead',productController.updateProjectDead);
 
 router.post('/updateAdminRug',productController.updateProjectRug);
 
+router.post('/updateAdminLanding',productController.updateAdminLanding);
+
 router.post('/updateAdminFeatured',productController.updateAdminFeatured);
 
 router.post('/updateAdminHot',productController.updateAdminHot);

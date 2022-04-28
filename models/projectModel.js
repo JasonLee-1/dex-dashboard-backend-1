@@ -6,6 +6,7 @@ let ProjectSchema = new Schema({
     image: {type: String},
     user: {type: String,},
     avatar: {type: String, required: false},
+    landing: {type: Boolean, required: false},
     featured: {type: Boolean, required: false},
     hot: {type: Boolean, required: false},
     trending: {type: Boolean, required: false},

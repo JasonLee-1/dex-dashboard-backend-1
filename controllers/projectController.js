@@ -86,6 +86,19 @@ exports.updateProjectRug = function (req, res){
    })
 }
 
+exports.updateAdminLanding = function (req, res){
+   Project.findById(req.body.id).exec((err, result)=>{
+       if (err)  return next(err);
+       if(result.landing)result.landing=false
+       else result.landing=true
+       result.isNew=false
+       Project.updateOne({_id:req.body.id},result).exec((err1,result1)=>{
+           if (err1)  return next(err1);
+           res.send(result)
+       })
+   })
+}
+
 exports.updateAdminFeatured = function (req, res){
    Project.findById(req.body.id).exec((err, result)=>{
        if (err)  return next(err);
