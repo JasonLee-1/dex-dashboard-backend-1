@@ -63,6 +63,8 @@ router.get('/getUser',userController.getUser);
 
 router.post('/deadUser',userController.deadUser);
 
+router.post('/deleteUser',userController.deleteUser);
+
 router.post('/updateProjectFunction',productController.updateProjectFunction);
 
 module.exports = router;

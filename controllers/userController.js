@@ -35,6 +35,12 @@ exports.getUser = function (req, res){
     })
 }
 
+exports.deleteUser = function (req, res){
+    User.deleteOne({_id:req.body.id}).exec((err, result)=>{
+        if (err)  return next(err);
+        res.send('Success!')
+    })
+}
 exports.deadUser = function (req, res){
     User.findById(req.body.id).exec((err, result)=>{
         if (err)  return next(err);
