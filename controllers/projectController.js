@@ -99,6 +99,8 @@ exports.updateAdminLanding = function (req, res){
    })
 }
 
+
+
 exports.updateAdminFeatured = function (req, res){
    Project.findById(req.body.id).exec((err, result)=>{
        if (err)  return next(err);
