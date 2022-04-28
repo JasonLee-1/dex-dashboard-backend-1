@@ -45,6 +45,10 @@ router.post('/addnetwork',categoryController.addNetwork);
 
 router.post('/deletenetwork',categoryController.deleteNetwork);
 
+router.post('/updateNetwork',categoryController.updateNetwork);
+
+router.post('/updateFork',categoryController.updateFork);
+
 
 router.get('/getwhitelist',whitelistController.getWhitelist);
 

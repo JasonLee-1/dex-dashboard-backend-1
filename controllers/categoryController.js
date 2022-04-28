@@ -24,6 +24,13 @@ exports.addFork = function (req, res) {
     })
 };
 
+exports.updateFork = function (req, res){
+    Fork.updateOne({_id:req.body._id},req.body).exec((err, result)=>{
+        if(err) return next(err)
+        res.send(req.body)
+    })
+ }
+
 exports.deleteFork = function (req, res){
     Fork.deleteOne({_id:req.body.id}).exec((err, result)=>{
         if(err) return next(err)
@@ -42,6 +49,13 @@ exports.addNetwork = function (req, res) {
         res.send({result})
     })
 };
+
+exports.updateNetwork = function (req, res){
+    Network.updateOne({_id:req.body._id},req.body).exec((err, result)=>{
+        if(err) return next(err)
+        res.send(req.body)
+    })
+ }
 
 exports.deleteNetwork = function (req, res){
     Network.deleteOne({_id:req.body.id}).exec((err, result)=>{
