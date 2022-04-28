@@ -10,8 +10,9 @@ exports.getWhitelist = function (req, res) {
 };
 
 exports.addWhitelist = function (req, res) {
-    console.log(req.body)
+    // console.log(req.body)
     let data = {
+        image:req.body.image,
         project:req.body.project,
         network:req.body.network,
         whitelist:req.body.whitelist,
@@ -21,11 +22,12 @@ exports.addWhitelist = function (req, res) {
     let whitlist = new Whitelist(data)
     whitlist.save(function(err, result){
         if(err) return next (err)
-        res.send(data)
+        res.send(whitlist)
     })
 };
 
 exports.updateWhitelist = function (req, res){
+    console.log(req.body)
     Whitelist.updateOne({_id:req.body._id},req.body).exec((err, result)=>{
         if(err) return next(err)
         Whitelist.findById(req.body._id).exec((err1, result1)=>{
@@ -36,7 +38,7 @@ exports.updateWhitelist = function (req, res){
 }
 
 exports.deleteWhitelist = function (req, res){
-    console.log(req.body)
+    // console.log(req.body)
     Whitelist.deleteOne({_id:req.body.id}).exec((err, result)=>{
         if (err)  return next(err);
         res.send(req.body.id)

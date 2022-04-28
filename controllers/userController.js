@@ -41,6 +41,16 @@ exports.deleteUser = function (req, res){
         res.send('Success!')
     })
 }
+exports.editUser = function (req, res){
+    console.log(req.body)
+    // User.findById(req.body.id).exec((err, result)=>{
+    //     if (err)  return next(err);
+        User.updateOne({_id:req.body._id},req.body).exec((err1,)=>{
+            if (err1)  return next(err1);
+            res.send(req.body)
+        })
+    // })
+}
 exports.deadUser = function (req, res){
     User.findById(req.body.id).exec((err, result)=>{
         if (err)  return next(err);
